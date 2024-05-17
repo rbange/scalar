@@ -17,6 +17,10 @@ app.get('/localhost', (_request, reply) => {
   reply.sendFile('api-reference-cdn-localhost.html', { cacheControl: false }) // overriding the options disabling cache-control headers) // serving path.join(__dirname, 'public', 'myHtml.html') directly
 })
 
+app.get('/with-header', (_request, reply) => {
+  reply.sendFile('api-reference-cdn-with-header.html', { cacheControl: false }) // overriding the options disabling cache-control headers) // serving path.join(__dirname, 'public', 'myHtml.html') directly
+})
+
 // Run the server!
 try {
   await app.listen({ port: 3173 })
