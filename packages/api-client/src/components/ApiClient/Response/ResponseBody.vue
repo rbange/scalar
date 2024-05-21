@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { ScalarCodeBlock } from '@scalar/components'
 import { isJsonString } from '@scalar/oas-utils'
-import type { AxiosHeaders } from 'axios'
 import contentType from 'content-type'
 import { computed, toRaw } from 'vue'
 
+import { normalizeHeaders } from '../../../helpers'
 import { CollapsibleSection } from '../../CollapsibleSection'
 
 const props = defineProps<{
@@ -14,11 +14,7 @@ const props = defineProps<{
 // In order to render the response body, we need to know the media type.
 const mediaType = computed(() => {
   // Transform all header keys to lowercase
-  const headers = Object.fromEntries(
-    Object.entries((props.response?.headers ?? {}) as AxiosHeaders).map(
-      ([key, value]) => [key.toLowerCase(), value],
-    ),
-  )
+  const headers = normalizeHeaders(props.response?.headers)
 
   // Get the content-type header
   const contentTypeHeader = headers['content-type']
