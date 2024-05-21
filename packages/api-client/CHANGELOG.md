@@ -1,5 +1,11 @@
 # @scalar/api-client
 
+## 1.2.30
+
+### Patch Changes
+
+- 504ff7a: fix: request / response active states margins, etc
+
 ## 1.2.29
 
 ### Patch Changes

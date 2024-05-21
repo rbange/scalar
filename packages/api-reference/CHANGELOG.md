@@ -1,5 +1,13 @@
 # @scalar/api-reference
 
+## 1.22.44
+
+### Patch Changes
+
+- f677ff5: feat: favor uppercase css style for sidebar heading
+- Updated dependencies [504ff7a]
+  - @scalar/api-client@1.2.30
+
 ## 1.22.43
 
 ### Patch Changes
