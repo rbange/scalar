@@ -74,7 +74,7 @@ const formattedResponseData = computed(() => {
   <CollapsibleSection title="Body">
     <template v-if="response">
       <ScalarCodeBlock
-        v-if="codeMirrorLanguage"
+        v-if="codeMirrorLanguage || typeof response.data === 'string'"
         class="custom-scroll"
         :content="formattedResponseData"
         :lang="codeMirrorLanguage" />
